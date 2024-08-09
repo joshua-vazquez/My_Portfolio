@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Wtl4fB0lv5Q=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jvazq\\source\\repos\\My_Portfolio\\Mortgage_Calculator\\Mortgage_Calculator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jvazq\\.nuget\\packages\\spectre.console\\0.49.1\\spectre.console.0.49.1.nupkg.sha512",
+    "C:\\Users\\jvazq\\.nuget\\packages\\spectre.console.cli\\0.49.1\\spectre.console.cli.0.49.1.nupkg.sha512"
+  ],
+  "logs": []
+}
