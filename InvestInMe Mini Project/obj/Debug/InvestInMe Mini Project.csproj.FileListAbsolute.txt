@@ -1,0 +1,21 @@
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestInMe Mini Project.csproj.AssemblyReference.cache
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestInMe_Mini_Project.Landing.resources
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestInMe_Mini_Project.Login.resources
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestInMe_Mini_Project.Properties.Resources.resources
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestInMe Mini Project.csproj.GenerateResource.cache
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestInMe Mini Project.csproj.CoreCompileInputs.cache
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\InvestInMe Mini Project.exe.config
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\InvestInMe Mini Project.exe
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\InvestInMe Mini Project.pdb
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestIn.2A1CA035.Up2Date
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestInMe Mini Project.exe
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestInMe Mini Project.pdb
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\NewsAPI.dll
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestInMe_Mini_Project.ArticleViewer.resources
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\HtmlAgilityPack.dll
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\HtmlAgilityPack.xml
