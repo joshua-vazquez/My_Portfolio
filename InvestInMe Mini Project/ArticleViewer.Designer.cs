@@ -34,32 +34,32 @@
             this.btnGoToArticle = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txtDescription = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.lblDescription = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblSentiment = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.Location = new System.Drawing.Point(12, 12);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(88, 20);
+            this.lblTitle.Size = new System.Drawing.Size(36, 20);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Values.Text = "kryptonLabel1";
+            this.lblTitle.Values.Text = "Title:";
             // 
             // lblSource
             // 
             this.lblSource.Location = new System.Drawing.Point(12, 47);
             this.lblSource.Name = "lblSource";
-            this.lblSource.Size = new System.Drawing.Size(88, 20);
+            this.lblSource.Size = new System.Drawing.Size(50, 20);
             this.lblSource.TabIndex = 1;
-            this.lblSource.Values.Text = "kryptonLabel2";
-            this.lblSource.Paint += new System.Windows.Forms.PaintEventHandler(this.lblSource_Paint);
+            this.lblSource.Values.Text = "Source:";
             // 
             // lblDate
             // 
             this.lblDate.Location = new System.Drawing.Point(12, 83);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(88, 20);
+            this.lblDate.Size = new System.Drawing.Size(39, 20);
             this.lblDate.TabIndex = 2;
-            this.lblDate.Values.Text = "kryptonLabel3";
+            this.lblDate.Values.Text = "Date:";
             // 
             // btnGoToArticle
             // 
@@ -86,12 +86,21 @@
             this.lblDescription.TabIndex = 6;
             this.lblDescription.Values.Text = "Description: ";
             // 
+            // lblSentiment
+            // 
+            this.lblSentiment.Location = new System.Drawing.Point(339, 12);
+            this.lblSentiment.Name = "lblSentiment";
+            this.lblSentiment.Size = new System.Drawing.Size(69, 20);
+            this.lblSentiment.TabIndex = 7;
+            this.lblSentiment.Values.Text = "Sentiment: ";
+            // 
             // ArticleViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(602, 289);
+            this.Controls.Add(this.lblSentiment);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btnGoToArticle);
@@ -113,5 +122,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnGoToArticle;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtDescription;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblDescription;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblSentiment;
     }
 }

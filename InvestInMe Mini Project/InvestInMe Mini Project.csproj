@@ -65,6 +65,12 @@
     <Compile Include="ArticleViewer.Designer.cs">
       <DependentUpon>ArticleViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrencyExchangeRatesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrencyExchangeRatesForm.Designer.cs">
+      <DependentUpon>CurrencyExchangeRatesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Landing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,9 +85,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StockMarketDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockMarketDataForm.Designer.cs">
+      <DependentUpon>StockMarketDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockMarketDataService.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="ArticleViewer.resx">
       <DependentUpon>ArticleViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrencyExchangeRatesForm.resx">
+      <DependentUpon>CurrencyExchangeRatesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Landing.resx">
       <DependentUpon>Landing.cs</DependentUpon>
@@ -98,6 +114,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StockMarketDataForm.resx">
+      <DependentUpon>StockMarketDataForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

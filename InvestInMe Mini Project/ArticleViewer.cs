@@ -6,30 +6,43 @@ namespace InvestInMe_Mini_Project
 {
     public partial class ArticleViewer: Form
     {
-        private string articleUrl;
-        public ArticleViewer(string title, string source, DateTime date, string description, string url)
+        private string title;
+        private string source;
+        private DateTime date;
+        private string description;
+        private string url;
+        private string sentiment;
+
+        public ArticleViewer(string title, string source, DateTime date, string description, string url, string sentiment)
         {
             InitializeComponent();
-            DisplayArticle(title, source, date, description);
-            articleUrl = url;
+            this.title = title;
+            this.source = source;
+            this.date = date;
+            this.description = description;
+            this.url = url;
+            this.sentiment = sentiment;
+
+            DisplayArticleDetails();
             
         }
-        private void DisplayArticle(string title, string source, DateTime date, string description)
+        private void DisplayArticleDetails()
         {
-            lblTitle.Text = title;
-            lblSource.Text = source;
-            lblDate.Text = $"Published at: {date}";
+            lblTitle.Text = $"Title: {title}";
+            lblSource.Text = $"Source: {source}";
+            lblDate.Text = $"Published at: {date.ToString("yyyy-MM-dd HH:mm")}";
             txtDescription.Text = description;
+            lblSentiment.Text = $"Sentiment: {sentiment}";
 
         }
 
         private void btnGoToArticle_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(articleUrl))
+            if (!string.IsNullOrEmpty(url))
             {
                 Process.Start(new ProcessStartInfo
                 {
-                    FileName = articleUrl,
+                    FileName = url,
                     UseShellExecute = true
                 });
             }
@@ -37,11 +50,6 @@ namespace InvestInMe_Mini_Project
             {
                 MessageBox.Show("Article URL is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void lblSource_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

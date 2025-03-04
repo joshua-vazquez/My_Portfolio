@@ -19,3 +19,5 @@ C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\Inves
 C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\HtmlAgilityPack.dll
 C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\bin\Debug\HtmlAgilityPack.xml
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestInMe_Mini_Project.StockMarketDataForm.resources
+C:\Users\jvazq\source\repos\My_Portfolio\InvestInMe Mini Project\obj\Debug\InvestInMe_Mini_Project.CurrencyExchangeRatesForm.resources
