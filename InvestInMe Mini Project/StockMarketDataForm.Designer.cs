@@ -34,7 +34,7 @@
             this.txtSymbol = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.lblTimeSeries = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cmbTimeSeries = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.btnDownloadStockData = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnExportToExcel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnGetStockData = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lblProgress = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -92,14 +92,14 @@
             this.cmbTimeSeries.TabIndex = 5;
             this.cmbTimeSeries.Text = "TIME_SERIES";
             // 
-            // btnDownloadStockData
+            // btnExportToExcel
             // 
-            this.btnDownloadStockData.Location = new System.Drawing.Point(709, 601);
-            this.btnDownloadStockData.Name = "btnDownloadStockData";
-            this.btnDownloadStockData.Size = new System.Drawing.Size(197, 25);
-            this.btnDownloadStockData.TabIndex = 6;
-            this.btnDownloadStockData.Values.Text = "Download Data";
-            this.btnDownloadStockData.Click += new System.EventHandler(this.btnDownloadStockData_Click);
+            this.btnExportToExcel.Location = new System.Drawing.Point(709, 601);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(197, 25);
+            this.btnExportToExcel.TabIndex = 6;
+            this.btnExportToExcel.Values.Text = "Export To Excel";
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
             // btnGetStockData
             // 
@@ -135,7 +135,7 @@
             this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnGetStockData);
-            this.Controls.Add(this.btnDownloadStockData);
+            this.Controls.Add(this.btnExportToExcel);
             this.Controls.Add(this.cmbTimeSeries);
             this.Controls.Add(this.lblTimeSeries);
             this.Controls.Add(this.txtSymbol);
@@ -159,7 +159,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSymbol;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTimeSeries;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cmbTimeSeries;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnDownloadStockData;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnExportToExcel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnGetStockData;
         private System.Windows.Forms.ProgressBar progressBar1;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblProgress;

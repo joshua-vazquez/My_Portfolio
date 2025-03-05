@@ -32,7 +32,7 @@
             this.txtFromCurrency = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.gridForexData = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.btnSearchCurrency = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnDownloadForex = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnExportToExcel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.rtbExchangeRatesInfo = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.lblToCurrency = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -73,14 +73,14 @@
             this.btnSearchCurrency.Values.Text = "Search";
             this.btnSearchCurrency.Click += new System.EventHandler(this.btnSearchCurrency_Click);
             // 
-            // btnDownloadForex
+            // btnExportToExcel
             // 
-            this.btnDownloadForex.Location = new System.Drawing.Point(482, 381);
-            this.btnDownloadForex.Name = "btnDownloadForex";
-            this.btnDownloadForex.Size = new System.Drawing.Size(174, 25);
-            this.btnDownloadForex.TabIndex = 4;
-            this.btnDownloadForex.Values.Text = "Download Rates";
-            this.btnDownloadForex.Click += new System.EventHandler(this.btnDownloadForex_Click);
+            this.btnExportToExcel.Location = new System.Drawing.Point(482, 381);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(174, 25);
+            this.btnExportToExcel.TabIndex = 4;
+            this.btnExportToExcel.Values.Text = "Export To Excel";
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
             // rtbExchangeRatesInfo
             // 
@@ -123,7 +123,7 @@
             this.Controls.Add(this.lblToCurrency);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.rtbExchangeRatesInfo);
-            this.Controls.Add(this.btnDownloadForex);
+            this.Controls.Add(this.btnExportToExcel);
             this.Controls.Add(this.btnSearchCurrency);
             this.Controls.Add(this.gridForexData);
             this.Controls.Add(this.txtFromCurrency);
@@ -142,7 +142,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtFromCurrency;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView gridForexData;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearchCurrency;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnDownloadForex;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnExportToExcel;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox rtbExchangeRatesInfo;
         private System.Windows.Forms.ProgressBar progressBar2;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblToCurrency;
