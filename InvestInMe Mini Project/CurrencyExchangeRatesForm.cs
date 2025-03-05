@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
@@ -8,12 +9,15 @@ namespace InvestInMe_Mini_Project
     public partial class CurrencyExchangeRatesForm: Form
     {
         private StockMarketDataService currencyService;
+        private ExcelExporter excelExporter;
+        private DataTable currencyDataTable;
         public CurrencyExchangeRatesForm()
         {
             InitializeComponent();
             DisplayInstructions();
             string apiKey = Environment.GetEnvironmentVariable("ALPHAVANTAGE_API_KEY");
             currencyService = new StockMarketDataService(apiKey);
+            excelExporter = new ExcelExporter();
 
             progressBar2.Minimum = 0;
             progressBar2.Maximum = 100;
@@ -46,6 +50,11 @@ namespace InvestInMe_Mini_Project
                 progressBar2.Value = 50;
 
                 var exchangeRateData = exchangeRates["Realtime Currency Exchange Rate"];
+                currencyDataTable = new DataTable();
+
+                currencyDataTable.Columns.Add("From Currency");
+                currencyDataTable.Columns.Add("To Currency");
+                currencyDataTable.Columns.Add("Exchange Rate");
 
                 if (exchangeRateData != null && exchangeRateData.HasValues)
                 {
@@ -54,6 +63,12 @@ namespace InvestInMe_Mini_Project
                         exchangeRateData["3. To_Currency Code"].ToString(),
                         exchangeRateData["5. Exchange Rate"].ToString()
                         );
+
+                    var row = currencyDataTable.NewRow();
+                    row["From Currency"] = exchangeRateData["1. From_Currency Code"].ToString();
+                    row["To Currency"] = exchangeRateData["3. To_Currency Code"].ToString();
+                    row["Exchange Rate"] = exchangeRateData["5. Exchange Rate"].ToString();
+                    currencyDataTable.Rows.Add(row);
 
                     progressBar2.Value = 100;
                 }
@@ -72,15 +87,17 @@ namespace InvestInMe_Mini_Project
             txtFromCurrency.Text = string.Empty;
             txtToCurrency.Text = string.Empty;
         }
-
-        private void btnDownloadForex_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This functionality will be operational soon.", "Under Construction", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
         private void DisplayInstructions()
         {
             string instructions = "Utilize our Currency Exchange Rates functionality powered by the Alpha Vantage API to access real-time currency conversion information. This tool allows you to stay informed about the latest exchange rates between two currencies. Simply enter the \"from\" currency and the \"to\" currency in the respective fields and press the search button to retrieve the current exchange rate. This feature provides you with accurate and up-to-date currency conversion data, helping you make informed financial decisions.";
             rtbExchangeRatesInfo.Text = instructions;
+        }
+
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            var specificFilePath = @"C:\Files";
+            excelExporter.ExportToExcel(currencyDataTable, specificFilePath);
+            MessageBox.Show("Data exported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

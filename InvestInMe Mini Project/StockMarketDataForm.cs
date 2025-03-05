@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Data;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -10,12 +11,15 @@ namespace InvestInMe_Mini_Project
     public partial class StockMarketDataForm: Form
     {
         private StockMarketDataService stockService;
+        private ExcelExporter excelExporter;
+        private DataTable stockDataTable;
         public StockMarketDataForm()
         {
             InitializeComponent();
             DisplayInstructions();
             string apiKey = Environment.GetEnvironmentVariable("ALPHAVANTAGE_API_KEY");
             stockService = new StockMarketDataService(apiKey);
+            excelExporter = new ExcelExporter();
 
             cmbTimeSeries.DataSource = Enum.GetValues(typeof(TimeSeries));
 
@@ -62,10 +66,10 @@ namespace InvestInMe_Mini_Project
                         timeSeriesKey = "Time Series (Daily)";
                         break;
                     case TimeSeries.TIME_SERIES_WEEKLY:
-                        timeSeriesKey = "Time Series (Weekly)";
+                        timeSeriesKey = "Weekly Time Series";
                         break;
                     case TimeSeries.TIME_SERIES_MONTHLY:
-                        timeSeriesKey = "Time Series (Monthly)";
+                        timeSeriesKey = "Monthly Time Series";
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(timeSeries), timeSeries, null);
@@ -81,6 +85,15 @@ namespace InvestInMe_Mini_Project
                     if(timeSeriesData != null)
                     {
                         gridStockData.Rows.Clear();
+                        stockDataTable = new DataTable();
+
+                        // add columns to data table
+                        stockDataTable.Columns.Add("Date");
+                        stockDataTable.Columns.Add("Open");
+                        stockDataTable.Columns.Add("Close");
+                        stockDataTable.Columns.Add("High");
+                        stockDataTable.Columns.Add("Low");
+                        stockDataTable.Columns.Add("Volume");
 
                         // simulate progress for data population
                         int rowCount = timeSeriesData.Children().Count();
@@ -100,6 +113,16 @@ namespace InvestInMe_Mini_Project
                                 data["3. low"].ToString(),
                                 data["5. volume"].ToString()
                             );
+
+                            // Add row to data table
+                            var row = stockDataTable.NewRow();
+                            row["Date"] = date;
+                            row["Open"] = data["1. open"].ToString();
+                            row["Close"] = data["4. close"].ToString();
+                            row["High"] = data["2. high"].ToString();
+                            row["Low"] = data["3. low"].ToString();
+                            row["Volume"] = data["5. volume"].ToString();
+                            stockDataTable.Rows.Add(row);
 
                             // Update progress bar incrementally
                             progressValue += progressIncrement;
@@ -125,9 +148,11 @@ namespace InvestInMe_Mini_Project
             string instructions = "Utilize our Stock Market Data functionality powered by the Alpha Vantage API to access detailed stock market information.This tool allows you to stay informed about the latest market trends and analyze stock performance over different time intervals. Simply select the desired time series (daily, weekly, or monthly) from the combo box and enter the stock symbol in the text box. Press the search button to retrieve the stock market data for the specified symbol.";
             rtbStockDataInfo.Text = instructions;
         }
-        private void btnDownloadStockData_Click(object sender, EventArgs e)
+        private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This funcionality will be coming soon... Come back later.", "Under Construction", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            var specificFilePath = @"C:\Files";
+            excelExporter.ExportToExcel(stockDataTable, specificFilePath);
+            MessageBox.Show("Data exported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
