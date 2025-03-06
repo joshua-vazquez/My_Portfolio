@@ -107,7 +107,7 @@ namespace InvestInMe_Mini_Project
                 var sentiment = selectedRow.Cells["Sentiment"].Value?.ToString();
 
                 DateTime date;
-                if(!DateTime.TryParseExact(dateStr, "yyyyMMdd'T'HHmm", null, System.Globalization.DateTimeStyles.None, out date))
+                if(!DateTime.TryParseExact(dateStr, "yyyyMMdd'T'HHmmss", null, System.Globalization.DateTimeStyles.None, out date))
                 {
                     date = DateTime.MinValue;
                 }
