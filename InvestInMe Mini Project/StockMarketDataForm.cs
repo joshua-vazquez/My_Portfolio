@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Data;
+using System.IO;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -150,7 +150,13 @@ namespace InvestInMe_Mini_Project
         }
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-            var specificFilePath = @"C:\Files";
+            var directoryPath = @"C:\Files";
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            var specificFilePath = Path.Combine(directoryPath, "stockData.xlsx");
             excelExporter.ExportToExcel(stockDataTable, specificFilePath);
             MessageBox.Show("Data exported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

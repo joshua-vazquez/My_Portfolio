@@ -14,13 +14,30 @@ namespace InvestInMe_Mini_Project
     {
         public void ExportToExcel(DataTable dataTable, string filePath)
         {
-            // Export DataTable to Excel
-            using (var package = new ExcelPackage())
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            try 
             {
-                var worksheet = package.Workbook.Worksheets.Add("Sheet1");
-                worksheet.Cells["A1"].LoadFromDataTable(dataTable, true);
-                var file = new FileInfo(filePath ?? "DefaultFilePath.xlsx");
-                package.SaveAs(file);
+                // Ensure directory exists
+                var directory = Path.GetDirectoryName(filePath);
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+
+                var file = new FileInfo(filePath);
+                using (var package = file.Exists ? new ExcelPackage(file) : new ExcelPackage())
+                {
+                    var worksheet = package.Workbook.Worksheets.FirstOrDefault() ?? package.Workbook.Worksheets.Add("Sheet1");
+
+                    var startRow = worksheet.Dimension?.End.Row + 1 ?? 1;
+                    worksheet.Cells[startRow, 1].LoadFromDataTable(dataTable, true);
+                    package.SaveAs(file);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving file: {ex.Message}");
             }
         }
     }

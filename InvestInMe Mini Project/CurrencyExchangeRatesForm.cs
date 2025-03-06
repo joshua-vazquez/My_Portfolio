@@ -3,6 +3,7 @@ using System.Data;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
+using System.IO;
 
 namespace InvestInMe_Mini_Project
 {
@@ -95,7 +96,13 @@ namespace InvestInMe_Mini_Project
 
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-            var specificFilePath = @"C:\Files";
+            var directoryPath = @"C:\Files";
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            var specificFilePath = Path.Combine(directoryPath, "currencyData.xlsx");
             excelExporter.ExportToExcel(currencyDataTable, specificFilePath);
             MessageBox.Show("Data exported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
